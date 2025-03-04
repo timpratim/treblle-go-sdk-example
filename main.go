@@ -109,8 +109,8 @@ func deleteUser(w http.ResponseWriter, r *http.Request) {
 func main() {
 	// Configure Treblle with additional fields to mask
 	treblle.Configure(treblle.Configuration{
-		APIKey:    "***REMOVED***",
-		ProjectID: "***REMOVED***",
+		APIKey:                 "***REMOVED***",
+		ProjectID:              "***REMOVED***",
 		AdditionalFieldsToMask: []string{"bank_account", "routing_number", "tax_id", "auth_token", "ssn", "api_key", "password", "credit_card"},
 	})
 
@@ -132,3 +132,15 @@ func main() {
 	log.Println("Server running on port 8085")
 	log.Fatal(http.ListenAndServe(":8085", r))
 }
+
+//to run the code
+//go run main.go
+//ngrok http 8085
+// Change the ngrok URL to the one provided by ngrok
+// Post command ( change ngrok URL in the curl command as well)
+// curl -X POST https://d4aa-62-163-212-117.ngrok-free.app/api/v1/users \
+// -H "Content-Type: application/json" \
+// -d '{"name":"Vredran Cindric","email":"vcindric@example.com","bank_account":"123456789","routing_number":"021000021","tax_id":"12-3456789"}'
+// Get command ( change ngrok URL in the curl command as well)
+// curl -X GET https://d4aa-62-163-212-117.ngrok-free.app/api/v1/users/1 \
+// -H "Content-Type: application/json"
