@@ -8,8 +8,8 @@ github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZb
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/stretchr/testify v1.8.4 h1:CcVxjf3Q8PM0mHUKJCdn+eZZtm5yQwehR5yeSVQQcUk=
 github.com/stretchr/testify v1.8.4/go.mod h1:sz/lmYIOXD/1dqDmKjjqLyZ2RngseejIcXlSw2iwfAo=
-github.com/timpratim/treblle-go v0.0.0-20250304183201-372c8727fe07 h1:W3U+mI4ItQOzVQH8544ayd4QdcrUfLXizJq2dXLjrJs=
-github.com/timpratim/treblle-go v0.0.0-20250304183201-372c8727fe07/go.mod h1:NvYBChDkkGZ40MFjjimGEQfbzqgPi75vX1ny4qHkBSY=
+github.com/timpratim/treblle-go v0.0.0-20250305182204-c99dda44ed8a h1:n5jeeKF6uUBO0Hd8is2lfQMm3eVJz0Y8D6jKMjyS//4=
+github.com/timpratim/treblle-go v0.0.0-20250305182204-c99dda44ed8a/go.mod h1:NvYBChDkkGZ40MFjjimGEQfbzqgPi75vX1ny4qHkBSY=
 golang.org/x/sync v0.11.0 h1:GGz8+XQP4FvTTrjZPzNKTMFtSXH80RAzG+5ghFPgK9w=
 golang.org/x/sync v0.11.0/go.mod h1:Czt+wKu1gCyEFDUtn0jG5QVvpJ6rzVqr5aXyt9drQfk=
 gopkg.in/yaml.v3 v3.0.1 h1:fxVm/GzAzEWqLHuvctI91KS9hhNmmWOoWu0XTYJS7CA=
