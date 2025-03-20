@@ -8,6 +8,7 @@ import (
 	"os"
 	"strconv"
 	"sync"
+	"time"
 
 	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
@@ -96,6 +97,31 @@ func (d *DebugTransport) RoundTrip(req *http.Request) (*http.Response, error) {
 	return resp, nil
 }
 
+// Custom middleware to add Treblle user ID and trace ID headers
+func addTreblleHeadersMiddleware(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		// In a real application, you would get the user from the session, JWT token, etc.
+		// For demonstration purposes, we'll check for a user ID in a custom header
+		userID := r.Header.Get("X-User-ID")
+		if userID != "" {
+			// Add Treblle user ID header
+			r.Header.Set("treblle-user-id", userID)
+			
+			// Add Treblle trace ID header (could be a correlation ID or any other identifier)
+			traceID := r.Header.Get("X-Trace-ID")
+			if traceID != "" {
+				r.Header.Set("treblle-tag-id", traceID)
+			} else {
+				// Generate a random trace ID if none is provided
+				r.Header.Set("treblle-tag-id", "trace-"+strconv.Itoa(int(time.Now().UnixNano())))
+			}
+		}
+		
+		// Call the next handler
+		next.ServeHTTP(w, r)
+	})
+}
+
 func main() {
 	// Load .env file
 	if err := godotenv.Load(); err != nil {
@@ -121,7 +147,8 @@ func main() {
 	r := mux.NewRouter()
 	api := r.PathPrefix("/api/v1").Subrouter()
 
-	// Apply Treblle middleware to the subrouter
+	// Apply our custom middleware first, then Treblle middleware
+	api.Use(addTreblleHeadersMiddleware)
 	api.Use(treblle.Middleware)
 
 	// Simple route definitions
