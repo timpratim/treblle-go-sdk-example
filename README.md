@@ -20,7 +20,7 @@ This repository demonstrates how to integrate the [Treblle SDK](https://github.c
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/timpratim/ngroktest.git
+   git clone https://github.com/timpratim/treblle-go-sdk-example.git
    cd ngroktest
    ```
 
