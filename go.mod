@@ -7,6 +7,9 @@ require (
 	github.com/treblle/treblle-go v0.7.2
 )
 
-require golang.org/x/sync v0.11.0 // indirect
+require (
+	github.com/joho/godotenv v1.5.1 // indirect
+	golang.org/x/sync v0.11.0 // indirect
+)
 
-replace github.com/treblle/treblle-go => github.com/timpratim/treblle-go v0.0.0-20250305182204-c99dda44ed8a
+replace github.com/treblle/treblle-go => github.com/timpratim/treblle-go v0.0.0-20250319173656-c9b1f96fb5a0

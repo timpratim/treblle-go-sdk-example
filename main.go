@@ -10,6 +10,7 @@ import (
 	"sync"
 
 	"github.com/gorilla/mux"
+	"github.com/joho/godotenv"
 	treblle "github.com/treblle/treblle-go"
 )
 
@@ -96,6 +97,11 @@ func (d *DebugTransport) RoundTrip(req *http.Request) (*http.Response, error) {
 }
 
 func main() {
+	// Load .env file
+	if err := godotenv.Load(); err != nil {
+		log.Println("Warning: Error loading .env file:", err)
+	}
+
 	// Enable HTTP client debugging
 	debug := os.Getenv("DEBUG")
 	if debug == "true" {
@@ -106,10 +112,10 @@ func main() {
 	}
 
 	treblle.Configure(treblle.Configuration{
-		APIKey:                 "***REMOVED***",
-		ProjectID:              "***REMOVED***",
+		APIKey:                 os.Getenv("TREBLLE_API_KEY"),
+		ProjectID:              os.Getenv("TREBLLE_PROJECT_ID"),
 		AdditionalFieldsToMask: []string{"bank_account", "routing_number", "tax_id", "auth_token", "ssn", "api_key", "password", "credit_card"},
-		Debug:                  true,
+		Debug:                  debug == "true",
 	})
 
 	r := mux.NewRouter()
