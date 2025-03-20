@@ -1,6 +1,6 @@
 # Treblle Go SDK Example with Gorilla Mux
 
-This repository demonstrates how to integrate the [Treblle SDK](https://github.com/Treblle/treblle-go) with a Go API built using the [Gorilla Mux](https://github.com/gorilla/mux) router. Treblle provides real-time API monitoring, automatic documentation, and powerful insights to help you build better APIs.
+This repository demonstrates how to integrate the [Treblle SDK](https://github.com/treblle/treblle-go) with a Go API built using the [Gorilla Mux](https://github.com/gorilla/mux) router. Treblle provides real-time API monitoring, automatic documentation, and powerful insights to help you build better APIs.
 
 ## Features
 
@@ -13,7 +13,7 @@ This repository demonstrates how to integrate the [Treblle SDK](https://github.c
 ## Prerequisites
 
 - Go 1.16 or higher
-- [ngrok](https://ngrok.com/) for exposing your local server to the internet
+- [ngrok](https://ngrok.com/) for exposing your local server to the internet (Only for Testing purposes)
 
 ## Installation
 
