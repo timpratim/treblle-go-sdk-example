@@ -138,8 +138,8 @@ func main() {
 	}
 
 	treblle.Configure(treblle.Configuration{
-		APIKey:                 os.Getenv("TREBLLE_API_KEY"),
-		ProjectID:              os.Getenv("TREBLLE_PROJECT_ID"),
+		API_KEY:                 os.Getenv("TREBLLE_API_KEY"),
+		SDK_TOKEN:              os.Getenv("TREBLLE_SDK_TOKEN"),
 		AdditionalFieldsToMask: []string{"bank_account", "routing_number", "tax_id", "auth_token", "ssn", "api_key", "password", "credit_card"},
 		Debug:                  debug == "true",
 	})
